@@ -1,0 +1,27 @@
+<div class="mainContent">
+    <div data-ng-controller="ProductController" data-ng-init="getSingleProduct()">
+
+        <div class="pull-left">
+            <div class="subHead">{{product_detail.artist}}, {{product_detail.title}}</div>
+
+            <div class="description left100 w600">
+                    {{product_detail.dimensions}}. {{product_detail.medium}}. {{product_detail.provenance}}
+            </div>
+            <table class="left100">
+                <tr data-ng-repeat="product in all_products">
+                    <td><span>{{product.artist}}</span></td>
+                    <td><span>{{product.title}}</span></td>
+                </tr>
+            </table>
+
+            <div class="subHead">{{product_detail.price}}</div>
+            <div class="subHead"><a href="#">PURCHASE</a></div> 
+        </div>       
+
+        <div class="pull-left">
+            <img ng-src="{{product_detail.img_src}}">
+        </div>
+        <div class="clearfix"></div>
+
+    </div>  
+</div>

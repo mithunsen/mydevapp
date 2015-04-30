@@ -1,0 +1,39 @@
+<div class="mainContent">
+    <div ng-controller="LoginController">
+        <div class="subHead">{{page_header}}<br></div>
+
+        <!-- Status messages ['status_class' will be 'error'/'success']-->
+        <div class="alert martop10 {{status_class}}" ng-show="show_status">
+            <a href="javascript:void(0);" onClick="$(this).parent().hide();" class="close" data-dismiss="alert">&times;</a>
+            {{statusMsg}}
+        </div>
+
+        <div class="left100">
+        	<form method="post" ng-submit="login()" id="loginFrm" name="loginFrm">
+                <div class="padbot5 {{username_error}}">
+                    <div class="w150 pull-left">Username </div>
+                    <div class="pull-left">:</div> 
+                    <div class="padleft15 pull-left"><input type="text" ng-model="cred.username"  /></div>
+                    <div class="padleft15 pull-left" ng-show="error.username"><i>Invalid Username</i></div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="padbot5 {{password_error}}">
+                    <div class="w150 pull-left">Password </div>
+                    <div class="pull-left">:</div> 
+                    <div class="padleft15 pull-left"><input type="password" ng-model="cred.password" /></div>
+                    <div class="padleft15 pull-left" ng-show="error.password"><i>Invalid Password</i></div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="padbot5">
+                    <div class="w150 pull-left">
+                        <a href="javascript:void(0);" ng-click='request_login();' class="submit">SUBMIT</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

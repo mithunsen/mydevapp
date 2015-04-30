@@ -1,0 +1,38 @@
+body{background-color:#fff; color:#333; font-family:lucida console; font-size:17px; line-height: normal;}
+
+.contentWrap{padding:0 20px; margin:auto;}
+.contentWrap input[type=text], .contentWrap input[type=password], .contentWrap input[type=email]{border:none; border-bottom: 1px solid;}
+.titleHead{color:#888888; font-size:17px; margin:20px 0 0 0;}
+.content{margin:0;}
+.mainContent{min-height: 300px;}
+.left40{margin:20px 0 20px 40px;}
+.left100{margin:20px 0 20px 100px;}
+.subHead{font-size:17px; margin-top:20px;}
+ul{margin:20px 0 20px 40px;}
+ul li{line-height:20px; list-style:none;}
+a{color:#333333;}
+.menuItems{margin: 20px 0;}
+.menuItems ul li, .menuItems a{color:#888888;}
+table thead tr th:not(:first-child), table tr td:not(:first-child){padding-left:30px;}
+table thead tr th{text-transform:uppercase;}
+.w200{width:200px;}
+.w450{width:450px;}
+.w600{width:600px;}
+.w150{width:150px;}
+.padleft15{padding-left:15px;}
+.padbot5{padding-bottom:5px;}
+.martop10{margin-top: 10px;}
+.martop18{margin-top: 18px;}
+.updateMemberFrm label{font-weight: normal;}
+.loader{display: none;}
+/*
+	Custom radio buttons or checkboxes 
+*/
+.customOptions input[type="radio"] {opacity: 0;}
+.customOptions input[type="radio"] + i label span{opacity: 0;}
+.customOptions input[type="radio"]:checked + i label span{opacity: 1;}
+.uploadImageFrom input[type="file"]{display: none;}
+.uploadImageFrom{margin-top:20px;}
+
+div[class$="__error"] {color: red; font-style: italic;}	/* end with  '__error' */
+._error{color: red; font-style: italic;}

@@ -1,0 +1,53 @@
+<div class="mainContent">
+    <div ng-controller="InviteController">
+        <div class="subHead">{{page_header}}<br></div>
+
+        <!-- Status messages ['status_class' will be 'error'/'success']-->
+        <div class="alert martop10 {{status_class}}" ng-show="show_status">
+            <a href="javascript:void(0);" onClick="$(this).parent().hide();" class="close" data-dismiss="alert">&times;</a>
+            {{statusMsg}}
+        </div>
+
+        <div class="description left100 w600">
+    			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    	</div>
+
+        <div class="subHead"><i>Request an Invite</i><br></div>
+
+        <div class="left100">
+        	<!--<form name="inviteForm" id='inviteForm' ng-submit="">-->
+                <div class="padbot5 {{firstname_error}}">
+                    <div class="w150 pull-left">Firstname </div>
+                    <div class="pull-left">:</div> 
+                    <div class="padleft15 pull-left"><input type="text" ng-model="cred.firstname"  /></div>
+                    <div class="padleft15 pull-left" ng-show="error.firstname"><i>Invalid Firstname</i></div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="padbot5 {{lastname_error}}">
+                    <div class="w150 pull-left">Lastname </div>
+                    <div class="pull-left">:</div> 
+                    <div class="padleft15 pull-left"><input type="text" ng-model="cred.lastname" /></div>
+                    <div class="padleft15 pull-left" ng-show="error.lastname"><i>Invalid Lastname</i></div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="padbot5 {{email_error}}">
+                    <div class="w150 pull-left">Email </div>
+                    <div class="pull-left">:</div> 
+                    <div class="padleft15 pull-left"><input type="email" ng-model="cred.email" /></div>
+                    <div class="padleft15 pull-left" ng-show="error.email"><i>Invalid Email address</i></div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="padbot5">
+                    <div class="w150 pull-left">
+                        <a href="javascript:void(0);" ng-click='inviteReq();' class="submit">SUBMIT</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            <!--</form>-->
+        </div>
+
+    </div>
+</div>

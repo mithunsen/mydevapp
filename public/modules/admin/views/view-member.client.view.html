@@ -1,0 +1,97 @@
+<div data-ng-controller="AdminController" data-ng-init="getSingleMember()">
+
+	<!-- Status messages ['status_class' will be 'error'/'success']-->
+    <div class="alert martop10 {{status_class}}" ng-show="show_status">
+        <a href="javascript:void(0);" onClick="$(this).parent().hide();" class="close" data-dismiss="alert">&times;</a>
+        {{statusMsg}}
+    </div>
+
+	<div class="subHead">
+		{{users.firstname}} {{users.lastname}}
+		<div>{{users.email}}</div>
+	</div>
+
+	<div class="updateMemberFrm">
+		<!--<form name="updateMemberFrm" id="updateMemberFrm" ng-submit="updateMember();">-->
+			<div class="left100">
+
+				<div>
+					<div class="w150 pull-left">Age </div>
+					<div class="pull-left">:</div> 
+					<div class="padleft15 pull-left">{{users.age}}</div>
+					<div class="clearfix"></div>
+				</div>
+				<div>
+					<div class="w150 pull-left">Gender </div>
+					<div class="pull-left">:</div> 
+					<div class="padleft15 pull-left">{{users.gender}}</div>
+					<div class="clearfix"></div>
+				</div>
+				<div>
+					<div class="w150 pull-left">Income </div>
+					<div class="pull-left">:</div> 
+					<div class="padleft15 pull-left">{{users.net_sales}}</div>
+					<div class="clearfix"></div>
+				</div>
+				<div>
+					<div class="w150 pull-left">Own v Rent </div>
+					<div class="pull-left">:</div> 
+					<div class="padleft15 pull-left">{{users.own_vs_rent}}</div>
+					<div class="clearfix"></div>
+				</div>
+				<div>
+					<div class="w150 pull-left">Interest </div>
+					<div class="pull-left">:</div> 
+					<div class="padleft15 pull-left">{{users.interests}}</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			
+			<div class="subHead">Status</div>
+			<div>
+				<ul>
+					<li class="customOptions">
+						<input type="radio" id="status_1" value="0" ng-model="cred.member_status">
+						<i><label for="status_1">applied [<span>x</span>]</label></i>
+						<br>
+						<input type="radio" id="status_2" value="1" ng-model="cred.member_status">
+						<i><label for="status_2">member [<span>x</span>]</label></i>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="subHead">Products</div>
+			<div class="left100">
+				<table>
+			        <thead>
+			            <tr>
+			                <th>Artist</th>
+			                <th>Title</th>
+			                <th>Dimensions</th>
+			                <th>Medium</th>
+			                <th>Price</th>
+			                <th>Visible to User?</th>
+			            </tr>
+			        </thead>
+			        <tr data-ng-repeat="product in productList">
+			            <td>{{product.artist}}</td>
+			            <td>"{{product.title}}"</td>
+			            <td>{{product.dimensions}}</td>
+			            <td>{{product.medium}}</td>
+			            <td>{{product.price}}</td>
+			            <td class="customOptions">
+			            	<input type="checkbox" id="product2member_{{product._id}}" ng-model="product.available_products"
+			            	ng-true-value="{{product._id}}" ng-checked="{{product.checked}}">
+
+			            	<i><label for="product2member_{{product._id}}">[<span>x</span>]</label></i>
+			            </td>
+			        </tr>
+		        </table>
+		        <div class="subHead">
+		        	<!--<a href="javascript:void(0);" onclick="$('#updateMemberFrm').submit();">SAVE</a>-->
+		        	<a href="javascript:void(0);" ng-click="updateMember();">SAVE</a>
+		        </div>
+		    </div>
+	    </form>
+	</div>
+</div>

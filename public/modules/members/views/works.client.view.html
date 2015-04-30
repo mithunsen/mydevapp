@@ -1,0 +1,25 @@
+<div class="mainContent">
+    <div data-ng-controller="InviteController" data-ng-init="get_member_works()">
+
+        <div class="description left100 w600">
+                Greeting <i>{{cred.firstname}}</i>, we've reviewed your information and selected these works from the collection.
+                We hope they interest you.
+        </div>
+        <table>
+            <tr data-ng-repeat="member_product in cred.product_assigned">
+                <td><a data-ng-href="#!/products/{{member_product._id}}"><span>{{member_product.artist}}</span></a></td>
+                <td><a data-ng-href="#!/products/{{member_product._id}}"><span>{{member_product.title}}</span></a></td>
+            </tr>
+        </table>
+
+        <div class="subHead">Private Catalog</div>
+
+        <table class="left100">
+            <tr data-ng-repeat="product in all_products">
+                <td><span>{{product.artist}}</span></td>
+                <td><span>{{product.title}}</span></td>
+            </tr>
+        </table>
+        
+    </div>	
+</div>

@@ -1,0 +1,26 @@
+<div class="mainContent">
+    <div data-ng-controller="AdminController" data-ng-init="getMembers()">
+        <div class="subHead">Recent User Activity</div>
+        <table class="left100">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Product Views</th>
+                    <th>Net Sales ($)</th>
+                </tr>
+            </thead>
+            <tr data-ng-repeat="user in users">
+                <td><a data-ng-href="#!/admin/getmember/{{user._id}}"><span>{{user.firstname}} {{user.lastname}}</span></a></td>
+                <td><a data-ng-href="#!/admin/getmember/{{user._id}}"><span>{{user.email}}</span></a></td>
+                <td><a data-ng-href="#!/admin/getmember/{{user._id}}"><span>{{user.status}}</span></a></td>
+                <td><a data-ng-href="#!/admin/getmember/{{user._id}}"><span>{{user.pro_views}}</span></a></td>
+                <td><a data-ng-href="#!/admin/getmember/{{user._id}}"><span>{{user.net_sales}}</span></a></td>
+            </tr>
+        </table>
+        <div class="subHead">
+        	<a href="#">ADD TO CATALOG</a>
+        </div>
+    </div>	
+</div>
