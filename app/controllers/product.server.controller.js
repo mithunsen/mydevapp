@@ -49,6 +49,20 @@ exports.getProductList = function(req,res){
 	});
 };
 
+exports.getProductListByIds = function(req, res) {
+	var req_ids = req.body;
+
+	var param = {
+		_id : {
+			$in: req_ids.ids
+		}
+	};
+
+	Product.find(param, function(err, result){
+		res.status(200).json(result);
+	});
+};
+
 exports.productByID = function(req, res, next, id) {
 	Product.findById(id).exec(function(err, product) {
 		if (err) return next(err);

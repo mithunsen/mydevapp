@@ -7,6 +7,7 @@ module.exports = function(app) {
 	app.route('/addProduct').post(product.addProduct);
 	app.route('/upload/image').post(product.postImage);
 	app.route('/products').get(product.getProductList);
+	app.route('/productsByIds').post(product.getProductListByIds);
 	app.route('/productByID/:productId').get(product.productByID);
 
 	//app.param('memberId', product.productId);

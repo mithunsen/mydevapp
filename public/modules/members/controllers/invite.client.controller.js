@@ -84,23 +84,15 @@ angular.module('members').controller('InviteController', ['$scope', 'ProductShar
 
 		$scope.get_member_works = function(){
 			$scope.cred = MemberAuthService.getAuth();
-			var member_product_ids = '';
-			var member_products = $scope.cred.product_assigned;
-
-			for(var i=0; i<member_products.length;i++){
-			  console.log(q[i]);
-			}
+			var ids_params = $scope.cred.product_assigned;
 
 			//	Get member product details
-			/*
-			$http.post('/get_member_product',$scope.cred).success(function(response) {
-				
-
-			}).error(function(response) {
-				//console.log('Error : '+response.message);
+			var member_product_list_promise = ProductSharedService.getProductListByIds({ids: ids_params});
+			member_product_list_promise.then(function(response){
+				$scope.products_for_member = response.data;
 			});
-			*/
 
+			
 			//	Get product lists via service
 			var promise = ProductSharedService.getProductList();
 			promise.then(function(response) {

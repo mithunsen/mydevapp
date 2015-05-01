@@ -6,7 +6,7 @@
                 We hope they interest you.
         </div>
         <table>
-            <tr data-ng-repeat="member_product in cred.product_assigned">
+            <tr data-ng-repeat="member_product in products_for_member">
                 <td><a data-ng-href="#!/products/{{member_product._id}}"><span>{{member_product.artist}}</span></a></td>
                 <td><a data-ng-href="#!/products/{{member_product._id}}"><span>{{member_product.title}}</span></a></td>
             </tr>
